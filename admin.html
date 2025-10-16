@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    
     <button id="cerrarSesion"> cerrar sesion</button>
     <table class="tablaclickable" id="datosUsuario">
         <tr style="background-color: lightgray;">
@@ -38,28 +39,7 @@
     </table>
     <button id="modificar">modificar</button>
     <button id="eliminar" onclick="eliminarUsuario()">eliminar</button>
-
-    <script>
-        document.getElementById("eliminar").addEventListener("click", function() {
-            const filaSeleccionada = document.querySelector("#datosUsuario tr.selected");
-            if (filaSeleccionada) {
-                filaSeleccionada.remove();
-            } else {
-                alert("Por favor, selecciona una fila para eliminar.");
-            }
-        });
-        const filas = document.querySelectorAll("#datosUsuario tr");
-        filas.forEach(fila => {
-            fila.addEventListener("click", () => {
-                if (fila.classList.contains("selected")) {
-                    fila.classList.remove("selected");
-                } else {
-                    filas.forEach(f => f.classList.remove("selected"));
-                    fila.classList.add("selected");
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
