@@ -4,13 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stryle.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/main-components.css">
     <title>Document</title>
 </head>
 
 <body>
+    <header>
+     <img src="../img/Logo Gure.png" alt="Icono" />
+    <div>
+        <nav>
+            <ul>
+                <li><a href="../Index.html">Cerrar Sesion</a></li>
+                
+            </ul>
+        </nav>
+    </div>
     
-    <button id="cerrarSesion"> cerrar sesion</button>
+    </header>
     <table class="tablaclickable" id="datosUsuario">
         <tr style="background-color: lightgray;">
             <th>Id</th>
@@ -39,7 +50,12 @@
     </table>
     <button id="modificar">modificar</button>
     <button id="eliminar" onclick="eliminarUsuario()">eliminar</button>
-    <script src="script.js"></script>
+    <script src="../script/script.js"></script>
+    <footer>
+        <div>
+            <p>Gure Event &copy; 2024</p>
+        </div>
+    </footer>
 </body>
 
 </html>
