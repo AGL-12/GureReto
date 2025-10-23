@@ -28,7 +28,7 @@
                     submitButton.disabled = true;
                     submitButton.textContent = 'Iniciando sesión...';
                     
-                    fetch('../controllers/Control.php?action=login', {
+                    fetch('../php/index.php?action=login', {
                         method: 'POST',
                         body: formData
                     })
