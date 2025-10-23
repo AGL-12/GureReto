@@ -10,38 +10,32 @@ $action = $_GET['action'] ?? '';
 $controller = new Control();
 
 switch($action) {
-    // Autenticación
     case 'login':
-        include 'iniciarSesion.php';
+        include __DIR__ . '/api/iniciarSesion.php';
         break;
         
     case 'register':
-        include 'registrar.php';
+        include __DIR__ . '/api/registrar.php';
         break;
         
     case 'logout':
-        include 'cerrarSesion.php';
+        include __DIR__ . '/api/cerrarSesion.php';
         break;
     
     // Gestión de usuarios
     case 'listar':
-        
         break;
         
     case 'obtener':
-        
         break;
         
     case 'crear':
-        
         break;
         
     case 'actualizar':
-        
         break;
         
     case 'eliminar':
-        
         break;
         
     default:
