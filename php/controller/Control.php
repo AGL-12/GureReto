@@ -1,8 +1,8 @@
 <?php
-require_once __DIR__ . '/../config/Database.php';
-require_once __DIR__ . '/../models/Perfil.php';
-require_once __DIR__ . '/../models/Usuario.php';
-require_once __DIR__ . '/../models/Admin.php';
+require_once  '/../config/Database.php';
+require_once  '/../models/Perfil.php';
+require_once  '/../models/Usuario.php';
+require_once  '/../models/Admin.php';
 
 class Control {
     private $conn;
