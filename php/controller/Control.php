@@ -12,5 +12,10 @@ class Control {
         $this->conn = $database->getConnection();
     }
 
+
+
+
+
+    
 }
 ?>
