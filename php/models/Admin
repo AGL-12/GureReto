@@ -1,5 +1,5 @@
 <?php
-class Admin {
+class Admin extends Perfil {
     private $id;
     private $cuenta_corriente;
 
@@ -9,11 +9,17 @@ class Admin {
     }
 
     // Getters
-    public function getId() { return $this->id; }
-    public function getCuentaCorriente() { return $this->cuenta_corriente; }
+    public function getId() { 
+        return $this->id; 
+    }
+    public function getCuentaCorriente() {
+         return $this->cuenta_corriente; 
+        }
 
     // Setters
-    public function setId($id) { $this->id = $id; }
+    public function setId($id) { 
+        $this->id = $id; 
+    }
     public function setCuentaCorriente($cuenta_corriente) { 
         $this->cuenta_corriente = $cuenta_corriente; 
     }
