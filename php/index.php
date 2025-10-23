@@ -12,36 +12,36 @@ $controller = new Control();
 switch($action) {
     // Autenticación
     case 'login':
-        $controller->login();
+        include 'iniciarSesion.php';
         break;
         
     case 'register':
-        $controller->register();
+        include 'registrar.php';
         break;
         
     case 'logout':
-        $controller->logout();
+        include 'cerrarSesion.php';
         break;
     
     // Gestión de usuarios
     case 'listar':
-        $controller->listar();
+        
         break;
         
     case 'obtener':
-        $controller->obtenerPerfil();
+        
         break;
         
     case 'crear':
-        $controller->crear();
+        
         break;
         
     case 'actualizar':
-        $controller->actualizar();
+        
         break;
         
     case 'eliminar':
-        $controller->eliminar();
+        
         break;
         
     default:

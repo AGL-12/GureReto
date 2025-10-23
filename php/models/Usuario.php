@@ -1,5 +1,5 @@
 <?php
-class Usuario {
+class Usuario extends Perfil {
     private $id;
     private $genero;
 
@@ -9,11 +9,19 @@ class Usuario {
     }
 
     // Getters
-    public function getId() { return $this->id; }
-    public function getGenero() { return $this->genero; }
+    public function getId() { 
+        return $this->id; 
+    }
+    public function getGenero() { 
+        return $this->genero;
+    }
 
     // Setters
-    public function setId($id) { $this->id = $id; }
-    public function setGenero($genero) { $this->genero = $genero; }
+    public function setId($id) { 
+        $this->id = $id; 
+    }
+    public function setGenero($genero) { 
+        $this->genero = $genero; 
+    }
 }
 ?>
