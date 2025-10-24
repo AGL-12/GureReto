@@ -1,19 +1,22 @@
 <?php
-class Usuario {
-    private $id;
+class Usuario extends Perfil
+{
     private $genero;
 
-    public function __construct($id = null, $genero = null) {
-        $this->id = $id;
+    public function __construct($id, $genero, $nombre, $email, $contrasena)
+    {
+        parent::__construct($id, $email, $contrasena, $nombre);
         $this->genero = $genero;
     }
 
-    // Getters
-    public function getId() { return $this->id; }
-    public function getGenero() { return $this->genero; }
 
-    // Setters
-    public function setId($id) { $this->id = $id; }
-    public function setGenero($genero) { $this->genero = $genero; }
+    public function getGenero()
+    {
+        return $this->genero;
+    }
+
+    public function setGenero($genero)
+    {
+        $this->genero = $genero;
+    }
 }
-?>
