@@ -1,17 +1,14 @@
 <?php
-require_once __DIR__ . '/../config/Database.php';
-require_once __DIR__ . '/../models/Perfil.php';
-require_once __DIR__ . '/../models/Usuario.php';
-require_once __DIR__ . '/../models/Admin.php';
+// Este archivo es incluido desde control.php
+// Ya NO necesita require_once porque control.php ya los cargó
 
 session_start();
 
 $email = $_POST['email'] ?? '';
 $contrasena = $_POST['contrasena'] ?? '';
 
-// Crear conexión a la base de datos
-$database = new Database();
-$conn = $database->getConnection();
+// Obtener la conexión del objeto $control que ya existe
+$conn = $control->getConnection();
 
 // SQL para buscar el perfil
 $query = "SELECT * FROM perfil WHERE email = :email AND contrasena = :contrasena";
