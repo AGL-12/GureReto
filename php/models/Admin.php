@@ -1,5 +1,5 @@
 <?php
-class Admin extends Usuario {
+class Admin extends Perfil {
     private $id;
     private $cuenta_corriente;
 

@@ -6,24 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/header-footer.css">
     <link rel="stylesheet" href="../css/main-components.css">
+    <script src="../script/script.js" defer></script>
     <title>Document</title>
 </head>
 
 <body>
     <header>
-     <img src="../img/Logo Gure.png" alt="Icono" />
-    <div>
-        <nav>
-            <ul>
-                <li><a href="../Index.html">Cerrar Sesion</a></li>
-                
-            </ul>
-        </nav>
-    </div>
-    
+        <a href="../Index.html">
+            <img src="../img/Logo Gure.png" alt="Icono" />
+        </a>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="../Index.html">Cerrar Sesion</a></li>
+                </ul>
+            </nav>
+        </div>
+
     </header>
+
     <table class="tablaclickable" id="datosUsuario">
-        <tr style="background-color: lightgray;">
+        <tr>
             <th>Id</th>
             <th>Email</th>
             <th>Nombre</th>
@@ -31,7 +34,7 @@
             <th>Teléfono</th>
             <th>Género</th>
         </tr>
-        <tr onclick="togglerow(this)">
+        <tr onclick="toggleRow(this)">
             <td>1</td>
             <td>usuario@example.com</td>
             <td>Juan</td>
@@ -39,7 +42,7 @@
             <td>555-1234</td>
             <td>Masculino</td>
         </tr>
-        <tr onclick="togglerow(this)">
+        <tr onclick="toggleRow(this)">
             <td>1</td>
             <td>usuario@example.com</td>
             <td>Juan</td>
@@ -48,9 +51,10 @@
             <td>Masculino</td>
         </tr>
     </table>
-    <button id="modificar">modificar</button>
-    <button id="eliminar" onclick="eliminarUsuario()">eliminar</button>
-    <script src="../script/script.js"></script>
+    <section class="botones-admin">
+        <button id="modificar">modificar</button>
+        <button id="eliminar">eliminar</button>
+    </section>
     <footer>
         <div>
             <p>Gure Event &copy; 2024</p>

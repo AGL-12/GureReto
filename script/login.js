@@ -37,18 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: formData,
                 });
                 
-                // OPCIÓN 2: Sin '../'
-                // const response = await fetch('php/index.php?action=login', {
-                //     method: 'POST',
-                //     body: formData,
-                // });
-                
-                // OPCIÓN 3: Ruta absoluta
-                // const response = await fetch('/GureReto/php/index.php?action=login', {
-                //     method: 'POST',
-                //     body: formData,
-                // });
-                
                 console.log('Status de respuesta:', response.status);
                 console.log('URL llamada:', response.url);
                 
