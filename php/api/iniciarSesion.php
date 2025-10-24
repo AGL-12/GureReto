@@ -20,7 +20,7 @@ if (empty($email) || empty($contrasena)) {
 
 try {
     // ⚠️ Asegúrate de usar el nombre correcto de la columna (correo o email)
-    $query = "SELECT * FROM perfil WHERE email = $email AND contrasena = $contrasena";
+    $query = "SELECT * FROM perfil WHERE email = :email AND contrasena = :contrasena";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':contrasena', $contrasena);
