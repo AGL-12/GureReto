@@ -18,15 +18,18 @@ require_once __DIR__ . '/../models/Usuario.php';
 require_once __DIR__ . '/../models/Admin.php';
 
 // Clase Control, se define antes de usarla para evitar problemas
-class Control {
+class Control
+{
     private $conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         $database = new Database();
         $this->conn = $database->getConnection();
     }
 
-    public function getConnection() {
+    public function getConnection()
+    {
         return $this->conn;
     }
 
@@ -61,6 +64,12 @@ switch ($action) {
 
     case 'logout':
         require_once __DIR__ . '/../api/cerrarSesion.php';
+        break;
+    case 'listar':
+        require_once __DIR__ . '/../api/cargarTabla.php';
+        break;
+    case 'borrar':
+        require_once __DIR__ . '/../api/eliminar.php';
         break;
 
     case 'obtenerSesion':
