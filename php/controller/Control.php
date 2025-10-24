@@ -63,6 +63,14 @@ switch ($action) {
         require_once __DIR__ . '/../api/cerrarSesion.php';
         break;
 
+    case 'obtenerSesion':
+    require_once __DIR__ . '/../api/obtenerSesion.php';
+    break;
+
+    case 'actualizarPerfil':
+    require_once __DIR__ . '/../api/actualizarPerfil.php';
+    break;
+
     default:
         echo json_encode(['success' => false, 'message' => 'Acción no válida']);
         break;
