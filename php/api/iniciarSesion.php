@@ -19,7 +19,8 @@ if (empty($email) || empty($contrasena)) {
 }
 
 try {
-    $query = "SELECT * FROM perfil WHERE email = :email AND contrasena = :contrasena";
+    // ⚠️ Asegúrate de usar el nombre correcto de la columna (correo o email)
+    $query = "SELECT * FROM perfil WHERE email = $email AND contrasena = $contrasena";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':contrasena', $contrasena);
@@ -30,7 +31,7 @@ try {
     if ($resultado) {
         $perfil = new Perfil(
             $resultado['id'],
-            $resultado['email'],
+            $resultado['correo'], // cambia aquí si el campo es distinto
             $resultado['contrasena'],
             $resultado['nombre'],
             $resultado['apellido'],
@@ -59,3 +60,4 @@ try {
 } catch (Exception $e) {
     echo json_encode(['success' => false, 'message' => 'Error del servidor: ' . $e->getMessage()]);
 }
+?>
