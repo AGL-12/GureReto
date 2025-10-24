@@ -68,6 +68,9 @@ switch ($action) {
     case 'listar':
         require_once __DIR__ . '/../api/cargarTabla.php';
         break;
+    case 'borrar':
+        require_once __DIR__ . '/../api/eliminar.php';
+        break;
 
     default:
         echo json_encode(['success' => false, 'message' => 'Acción no válida']);

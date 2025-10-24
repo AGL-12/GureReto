@@ -47,3 +47,31 @@ function togglerow(fila) {
     tbody.querySelectorAll("tr").forEach(r => r.classList.remove("selected"));
     fila.classList.add("selected");
 }
+
+document.getElementById("eliminar").addEventListener("click", async () => {
+    const filaSeleccionada = document.querySelector("#datosUsuario tr.selected");
+    if (!filaSeleccionada) {
+        alert("Selecciona un usuario primero.");
+        return;
+    }
+
+    const idUsuario = filaSeleccionada.dataset.id;
+
+    if (!confirm("¿Estás seguro de eliminar este usuario?")) return;
+
+    try {
+        const response = await fetch(`../php/controller/Control.php?action=borrar&id=${idUsuario}`, {
+            method: "POST"
+        });
+        const data = await response.json();
+
+        if (data.success) {
+            alert("Usuario eliminado correctamente.");
+            filaSeleccionada.remove(); // Quitar la fila de la tabla
+        } else {
+            alert("Error al eliminar: " + (data.error || data.message));
+        }
+    } catch (error) {
+        alert("Error de conexión o servidor: " + error);
+    }
+});
