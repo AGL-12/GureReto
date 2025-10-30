@@ -1,7 +1,4 @@
 <?php
-// Este archivo es incluido desde control.php
-// Ya NO necesita require_once porque control.php ya los cargó
-
 session_start();
 
 $email = $_POST['email'] ?? '';

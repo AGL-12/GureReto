@@ -75,3 +75,29 @@ document.getElementById("eliminar").addEventListener("click", async () => {
         alert("Error de conexión o servidor: " + error);
     }
 });
+
+document.getElementById("modificar").addEventListener("click", () => {
+  const filaSeleccionada = document.querySelector("#datosUsuario tr.selected");
+  if (!filaSeleccionada) {
+    alert("Selecciona un usuario primero.");
+    return;
+  }
+
+  const idUsuario = filaSeleccionada.dataset.id;
+
+  // Guardar el ID (o los datos completos) en sessionStorage
+  const datosUsuario = {
+    id: idUsuario,
+    email: filaSeleccionada.cells[1].textContent,
+    nombre: filaSeleccionada.cells[2].textContent,
+    apellido: filaSeleccionada.cells[3].textContent,
+    telefono: filaSeleccionada.cells[4].textContent,
+    genero: filaSeleccionada.cells[5].textContent
+  };
+
+  sessionStorage.setItem("usuarioSeleccionado", JSON.stringify(datosUsuario));
+
+  // Redirigir a la vista usuario.html
+  window.location.href = "../view/usuario.html";
+});
+

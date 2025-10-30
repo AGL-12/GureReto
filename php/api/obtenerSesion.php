@@ -23,6 +23,7 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($usuario) {
     echo json_encode([
         'success' => true,
+        'id' => $usuario['id'],
         'nombre' => $usuario['nombre'],
         'apellido' => $usuario['apellido'],
         'email' => $usuario['email'],
