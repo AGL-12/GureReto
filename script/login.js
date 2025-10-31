@@ -109,8 +109,44 @@ document.getElementById("nombre").value = usuario.nombre;
 document.getElementById("apellido").value = usuario.apellido;
 document.getElementById("telefono").value = usuario.telefono;
 document.getElementById("genero").value = usuario.genero;
+// 🔹 Ocultar navegación normal del usuario
+const navList = document.querySelector("header nav ul");
+if (navList) navList.innerHTML = "";
+
+// 🔹 Crear botón "Volver al panel de administración"
+const volverBtn = document.createElement("button");
+volverBtn.textContent = "Volver al Panel Admin";
+volverBtn.classList.add("btn-volver");
+volverBtn.style.margin = "10px";
+volverBtn.addEventListener("click", () => {
+  sessionStorage.removeItem("usuarioSeleccionado"); // Limpia la selección
+  window.location.href = "admin.html";
+});
+
+// Insertar el botón en el header
+const headerDiv = document.querySelector("header div") || document.querySelector("header");
+headerDiv.appendChild(volverBtn);
 } else {
-cargarDatosUsuario();
+  cargarDatosUsuario();
+  // Eventos normales
+  const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+  if (btnCerrarSesion) {
+    btnCerrarSesion.addEventListener("click", (e) => {
+      e.preventDefault();
+      cerrarSesion();
+    });
+  }
+
+  const btnEditarPerfil = document.getElementById("btnEditarPerfil");
+  if (btnEditarPerfil) {
+    btnEditarPerfil.addEventListener("click", habilitarEdicion);
+  }
+
+  const btnGuardarPerfil = document.getElementById("btnGuardarPerfil");
+  if (btnGuardarPerfil) {
+    btnGuardarPerfil.addEventListener("click", guardarCambios);
+  }
+}
 }
 
 // Asignar eventos
@@ -131,7 +167,7 @@ const btnGuardarPerfil = document.getElementById("btnGuardarPerfil");
 if (btnGuardarPerfil) {
 btnGuardarPerfil.addEventListener("click", guardarCambios);
 }
-}
+
 
 function cargarDatosUsuario() {
 fetch("../php/controller/control.php?action=obtenerSesion", {
