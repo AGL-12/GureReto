@@ -17,6 +17,7 @@ require_once __DIR__ . '/../models/Perfil.php';
 require_once __DIR__ . '/../models/Usuario.php';
 require_once __DIR__ . '/../models/Admin.php';
 
+
 // Clase Control, se define antes de usarla para evitar problemas
 class Control
 {
@@ -32,10 +33,6 @@ class Control
     {
         return $this->conn;
     }
-
-    // Aquí podrías añadir métodos que centralicen la lógica (opcional)
-    // public function login(...) { ... }
-    // public function register(...) { ... }
 }
 
 // Obtener la acción enviada por POST (o GET como fallback)
@@ -73,15 +70,14 @@ switch ($action) {
         break;
 
     case 'obtenerSesion':
-    require_once __DIR__ . '/../api/obtenerSesion.php';
-    break;
+        require_once __DIR__ . '/../api/obtenerSesion.php';
+        break;
 
     case 'actualizarPerfil':
-    require_once __DIR__ . '/../api/actualizarPerfil.php';
-    break;
+        require_once __DIR__ . '/../api/actualizarPerfil.php';
+        break;
 
     default:
         echo json_encode(['success' => false, 'message' => 'Acción no válida']);
         break;
 }
-?>
